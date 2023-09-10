@@ -1,6 +1,7 @@
 from flask import Flask, jsonify
 from flask_restful import Api, Resource
 from datetime import datetime
+import pytz
 
 
 app = Flask(__name__)
@@ -11,7 +12,7 @@ api = Api(app)
 class EndPoint1(Resource):
     name = "Sulaimon Taiwo Femi"
     current_day = "Sunday"
-    current_time = datetime.now()
+    current_time = datetime.now(pytz.utc)
     track = "backend"
     file = "https://github.com/badoolee/First-Task/blob/master/task.py"
     code = "https://github.com/badoolee/First-Task"
@@ -42,7 +43,7 @@ class EndPoint1(Resource):
 class Endpoint2(Resource):
     name = "Sulaimon Taiwo Femi"
     current_day = "Sunday"
-    current_time = datetime.now()
+    current_time = datetime.now(pytz.utc)
     track = "backend"
     file = "file"
     code = "code"
