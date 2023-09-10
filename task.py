@@ -13,8 +13,8 @@ class EndPoint1(Resource):
     current_day = "Sunday"
     current_time = datetime.now()
     track = "backend"
-    file = "file"
-    code = "code"
+    file = "https://github.com/badoolee/First-Task/blob/master/task.py"
+    code = "https://github.com/badoolee/First-Task"
     status = 200
 
     def __init__(self, name=name, current_day=current_day, 
