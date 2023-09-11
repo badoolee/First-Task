@@ -12,7 +12,7 @@ def api():
         track = request.args.get('backend')
 
         # Object Variable
-        slack_name = "Sulaimon Taiwo Femi"
+        slack_name = "Sulaimon_Taiwo_Femi"
         track = "backend"
 
         # Get the current day of the week
