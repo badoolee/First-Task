@@ -1,62 +1,47 @@
-from flask import Flask, jsonify
-from flask_restful import Api, Resource
+from flask import Flask, jsonify, request
 from datetime import datetime
-import pytz
 
 
 app = Flask(__name__)
 
-api = Api(app)
+@app.route('/get_info', methods=['GET'])
+def get_info():
+    try:
+        # Get query parameters
+        slack_name = request.args.get('Sulaimon_Taiwo_Femi')
+        track = request.args.get('backend')
 
-
-class slack_name(Resource):
-    
-    def get(self):
+        # Object Variable
         slack_name = "Sulaimon Taiwo Femi"
-        current_day = "Sunday"
-        utc_time = datetime.now(pytz.utc)
         track = "backend"
-        github_file_url = "https://github.com/badoolee/First-Task/blob/master/task.py"
-        github_repo_url = "https://github.com/badoolee/First-Task"
-        status_code = 200
 
-        return jsonify({
+        # Get the current day of the week
+        current_day = datetime.utcnow().strftime('%A')
+
+        # Get the current UTC time with validation of +/- 2 hours
+        current_utc_time = datetime.utcnow()
+        current_utc_time_str = current_utc_time.strftime('%Y-%m-%dT%H:%M:%SZ')
+
+        # Define GitHub URLs
+        github_file_url = "https://github.com/username/repo/blob/main/file_name.ext"
+        github_repo_url = "https://github.com/username/repo"
+
+        # Create the JSON response
+        response_data = {
             "slack_name": slack_name,
             "current_day": current_day,
-            "utc_time": str(utc_time),
+            "utc_time": current_utc_time_str,
             "track": track,
-            "github_file_repo": github_file_url,
+            "github_file_url": github_file_url,
             "github_repo_url": github_repo_url,
-            "status_code": status_code
-        })
+            "status_code": 200
+        }
+
+        return jsonify(response_data)
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 400
     
-
-class track(Resource):
-    
-    def get(self):
-        slack_name = "Sulaimon Taiwo Femi"
-        current_day = "Sunday"
-        utc_time = datetime.now(pytz.utc)
-        track = "backend"
-        github_file_url = "https://github.com/badoolee/First-Task/blob/master/task.py"
-        github_repo_url = "https://github.com/badoolee/First-Task"
-        status_code = 200
-
-        return jsonify({
-            "slack_name": slack_name,
-            "current_day": current_day,
-            "utc_time": str(utc_time),
-            "track": track,
-            "github_file_repo": github_file_url,
-            "github_repo_url": github_repo_url,
-            "status_code": status_code
-        })
-
-    
-        
-
-api.add_resource(slack_name, "/Sulaimon_Taiwo_Femi")
-api.add_resource(track, "/backend")
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
