@@ -9,7 +9,7 @@ app = Flask(__name__)
 api = Api(app)
 
 
-class EndPoint1(Resource):
+class slack_name(Resource):
     name = "Sulaimon Taiwo Femi"
     current_day = "Sunday"
     current_time = datetime.now(pytz.utc)
@@ -40,7 +40,7 @@ class EndPoint1(Resource):
             "status": self.status
         }
 
-class Endpoint2(Resource):
+class track(Resource):
     name = "Sulaimon Taiwo Femi"
     current_day = "Sunday"
     current_time = datetime.now(pytz.utc)
@@ -73,8 +73,8 @@ class Endpoint2(Resource):
     
         
 
-api.add_resource(EndPoint1, "/Sulaimon_Taiwo_Femi")
-api.add_resource(Endpoint2, "/backend")
+api.add_resource(slack_name, "/Sulaimon_Taiwo_Femi")
+api.add_resource(track, "/backend")
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
