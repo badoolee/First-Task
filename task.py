@@ -13,44 +13,44 @@ class slack_name(Resource):
     
     def get(self):
         slack_name = "Sulaimon Taiwo Femi"
+        current_day = "Sunday"
         utc_time = datetime.now(pytz.utc)
         track = "backend"
         github_file_url = "https://github.com/badoolee/First-Task/blob/master/task.py"
         github_repo_url = "https://github.com/badoolee/First-Task"
-        current_day = "Sunday"
         status_code = 200
 
-        return {
+        return jsonify({
             "slack_name": slack_name,
+            "current_day": current_day,
             "utc_time": str(utc_time),
             "track": track,
             "github_file_repo": github_file_url,
             "github_repo_url": github_repo_url,
-            "current_day": current_day,
             "status_code": status_code
-        }
+        })
     
 
 class track(Resource):
     
     def get(self):
         slack_name = "Sulaimon Taiwo Femi"
+        current_day = "Sunday"
         utc_time = datetime.now(pytz.utc)
         track = "backend"
         github_file_url = "https://github.com/badoolee/First-Task/blob/master/task.py"
         github_repo_url = "https://github.com/badoolee/First-Task"
-        current_day = "Sunday"
         status_code = 200
 
-        return {
+        return jsonify({
             "slack_name": slack_name,
+            "current_day": current_day,
             "utc_time": str(utc_time),
             "track": track,
             "github_file_repo": github_file_url,
             "github_repo_url": github_repo_url,
-            "current_day": current_day,
             "status_code": status_code
-        }
+        })
 
     
         
