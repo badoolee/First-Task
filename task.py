@@ -8,11 +8,10 @@ app = Flask(__name__)
 def api():
     try:
         # Get query parameters
-        slack_name = input(request.args.get(""))
+        slack_name = request.args.get("slack_name")
         track = request.args.get('backend')
 
         # Object Variable
-        slack_name = slack_name
         track = "backend"
 
         # Get the current day of the week
