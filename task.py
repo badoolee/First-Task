@@ -4,8 +4,8 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-@app.route('/get_info', methods=['GET'])
-def get_info():
+@app.route('/api', methods=['GET'])
+def api():
     try:
         # Get query parameters
         slack_name = request.args.get('Sulaimon_Taiwo_Femi')
