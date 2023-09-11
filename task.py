@@ -12,44 +12,46 @@ api = Api(app)
 class slack_name(Resource):
     
     def get(self):
-        name = "Sulaimon Taiwo Femi"
+        slack_name = "Sulaimon Taiwo Femi"
         current_day = "Sunday"
-        current_time = datetime.now(pytz.utc)
+        utc_time = datetime.now(pytz.utc)
         track = "backend"
-        file = "https://github.com/badoolee/First-Task/blob/master/task.py"
-        code = "https://github.com/badoolee/First-Task"
-        status = 200
+        github_file_url = "https://github.com/badoolee/First-Task/blob/master/task.py"
+        github_repo_url = "https://github.com/badoolee/First-Task"
+        status_code = 200
 
         return {
-            "name": name,
+            "slack_name": slack_name,
             "current_day": current_day,
-            "current_time": str(current_time),
+            "utc_time": str(utc_time),
             "track": track,
-            "file": file,
-            "code": code,
-            "status": status
+            "github_file_repo": github_file_url,
+            "github_repo_url": github_repo_url,
+            "status_code": status_code
         }
+    
 
 class track(Resource):
     
     def get(self):
-        name = "Sulaimon Taiwo Femi"
+        slack_name = "Sulaimon Taiwo Femi"
         current_day = "Sunday"
-        current_time = datetime.now(pytz.utc)
+        utc_time = datetime.now(pytz.utc)
         track = "backend"
-        file = "file"
-        code = "code"
-        status = 200
+        github_file_url = "https://github.com/badoolee/First-Task/blob/master/task.py"
+        github_repo_url = "https://github.com/badoolee/First-Task"
+        status_code = 200
 
         return {
-            "name": name,
+            "slack_name": slack_name,
             "current_day": current_day,
-            "current_time": str(current_time),
+            "utc_time": str(utc_time),
             "track": track,
-            "file": file,
-            "code": code,
-            "status": status
+            "github_file_repo": github_file_url,
+            "github_repo_url": github_repo_url,
+            "status_code": status_code
         }
+
     
         
 
