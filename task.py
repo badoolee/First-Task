@@ -73,7 +73,7 @@ class Endpoint2(Resource):
     
         
 
-api.add_resource(EndPoint1, "/Sulaimon Taiwo Femi")
+api.add_resource(EndPoint1, "/Sulaimon_Taiwo_Femi")
 api.add_resource(Endpoint2, "/backend")
 
 if __name__ == "__main__":
